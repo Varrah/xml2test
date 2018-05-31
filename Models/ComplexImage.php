@@ -9,7 +9,7 @@
 namespace Models;
 
 
-class Builder
+class ComplexImage
 {
     /**
      * @var int $complexId

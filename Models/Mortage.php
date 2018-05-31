@@ -9,7 +9,7 @@
 namespace Models;
 
 
-class Builder
+class Mortage
 {
     /**
      * @var int $buildingId
