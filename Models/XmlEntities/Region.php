@@ -6,10 +6,10 @@
  * Time: 17:57
  */
 
-namespace Models;
+namespace Models\XmlEntities;
 
 
-class Region
+class Region extends BaseEntity
 {
     /**
      * @var int $id

@@ -6,10 +6,10 @@
  * Time: 17:56
  */
 
-namespace Models;
+namespace Models\XmlEntities;
 
 
-class Bank
+class FlatType extends BaseEntity
 {
     /**
      * @var int $id

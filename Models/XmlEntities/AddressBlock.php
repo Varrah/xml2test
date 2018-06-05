@@ -6,10 +6,10 @@
  * Time: 17:56
  */
 
-namespace Models;
+namespace Models\XmlEntities;
 
 
-class Subway
+class AddressBlock extends BaseEntity
 {
     /**
      * @var int $id
@@ -19,14 +19,6 @@ class Subway
      * @var string $name
      */
     public $name;
-    /**
-     * @var int $line
-     */
-    public $line;
-    /**
-     * @var int $addressBlockId
-     */
-    public $addressBlockId;
     /**
      * @var int $statusId
      */

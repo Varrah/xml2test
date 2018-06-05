@@ -6,10 +6,10 @@
  * Time: 17:56
  */
 
-namespace Models;
+namespace Models\XmlEntities;
 
 
-class BuildingVariant
+class Bank extends BaseEntity
 {
     /**
      * @var int $id

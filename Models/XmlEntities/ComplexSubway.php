@@ -6,10 +6,10 @@
  * Time: 17:56
  */
 
-namespace Models;
+namespace Models\XmlEntities;
 
 
-class ComplexSubway
+class ComplexSubway extends BaseEntity
 {
     /**
      * @var int $complexId

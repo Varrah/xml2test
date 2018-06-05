@@ -6,13 +6,13 @@
  * Time: 17:56
  */
 
-namespace Models;
+namespace Models\XmlEntities;
 
 /**
  * Class BuildingClass is used for the Class entity in the incoming XML file.
  * Renamed from pure "Class" due to PHP naming restrictions
  */
-class ComplexType
+class ComplexType extends BaseEntity
 {
     /**
      * @var int $id

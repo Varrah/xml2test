@@ -6,19 +6,19 @@
  * Time: 17:56
  */
 
-namespace Models;
+namespace Models\XmlEntities;
 
 
-class ContractType
+class Mortgage extends BaseEntity
 {
     /**
-     * @var int $id
+     * @var int $buildingId
      */
-    public $id;
+    public $buildingId;
     /**
-     * @var string $name
+     * @var int $bankId
      */
-    public $name;
+    public $bankId;
     /**
      * @var int $statusId
      */

@@ -6,10 +6,10 @@
  * Time: 17:56
  */
 
-namespace Models;
+namespace Models\XmlEntities;
 
 
-class ComplexImage
+class ComplexImage extends BaseEntity
 {
     /**
      * @var int $complexId

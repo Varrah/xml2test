@@ -6,19 +6,19 @@
  * Time: 17:56
  */
 
-namespace Models;
+namespace Models\XmlEntities;
 
 
-class Mortage
+class Decoration extends BaseEntity
 {
     /**
-     * @var int $buildingId
+     * @var int $id
      */
-    public $buildingId;
+    public $id;
     /**
-     * @var int $bankId
+     * @var string $name
      */
-    public $bankId;
+    public $name;
     /**
      * @var int $statusId
      */

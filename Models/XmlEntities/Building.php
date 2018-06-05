@@ -6,10 +6,10 @@
  * Time: 17:56
  */
 
-namespace Models;
+namespace Models\XmlEntities;
 
 
-class Bank
+class Building extends BaseEntity
 {
     /**
      * @var int $id
@@ -40,34 +40,33 @@ class Bank
      */
     public $line;
     /**
-     * TODO
-     * @var int $complexId
+     * @var int $contractTypeId
      */
-    public $complexId;
+    public $contractTypeId;
     /**
-     * @var int $complexId
+     * @var int $mortgage
      */
-    public $complexId;
+    public $mortgage;
     /**
-     * @var int $complexId
+     * @var int $militaryMortgage
      */
-    public $complexId;
+    public $militaryMortgage;
     /**
-     * @var int $complexId
+     * @var int $subsidy
      */
-    public $complexId;
+    public $subsidy;
     /**
-     * @var int $complexId
+     * @var int $maternitycapital
      */
-    public $complexId;
+    public $maternitycapital;
     /**
-     * @var int $complexId
+     * @var int $installment
      */
-    public $complexId;
+    public $installment;
     /**
-     * @var string $endingperiod
+     * @var string $endingPeriod
      */
-    public $endingperiod;
+    public $endingPeriod;
     /**
      * @var int $statusId
      */
