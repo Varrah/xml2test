@@ -11,7 +11,7 @@ define('DB_USER', 'arrdev1');
 define('DB_PASSWORD', 'arrdev1_twinkletoes');
 define('DB_NAME', 'xmltmp');
 
-define('XML_PATH', 'xml/SiteData.xml');
+define('XML_PATH', 'xml/SiteDataExample.xml');
 
 spl_autoload_register(function ($class) {
     if (substr($class, 0, strlen(__NAMESPACE__)) != __NAMESPACE__) {

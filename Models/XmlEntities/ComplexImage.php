@@ -9,22 +9,24 @@
 namespace Models\XmlEntities;
 
 
+use Models\Status;
+
 class ComplexImage extends BaseEntity
 {
     /**
      * @var int $complexId
      */
-    public $complexId;
+    public $complexId = 0;
     /**
      * @var bool $isMain
      */
-    public $isMain;
+    public $isMain = false;
     /**
      * @var string $fileName
      */
-    public $fileName;
+    public $fileName = '';
     /**
      * @var int $statusId
      */
-    public $statusId;
+    public $statusId = Status::ACTIVE;
 }

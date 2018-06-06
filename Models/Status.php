@@ -11,12 +11,6 @@ namespace Models;
 
 class Status
 {
-    /**
-     * @var int $id
-     */
-    public $id;
-    /**
-     * @var string $name
-     */
-    public $name;
+    const ACTIVE     = 1;
+    const DEPRECATED = 2;
 }

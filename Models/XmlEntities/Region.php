@@ -9,30 +9,32 @@
 namespace Models\XmlEntities;
 
 
+use Models\Status;
+
 class Region extends BaseEntity
 {
     /**
      * @var int $id
      */
-    public $id;
+    public $id = 0;
     /**
      * @var string $name
      */
-    public $name;
+    public $name = '';
     /**
-     * @var bool $isregion
+     * @var bool $isRegion
      */
-    public $isRegion;
+    public $isRegion = false;
     /**
-     * @var bool $iscitydistrict
+     * @var bool $isCityDistrict
      */
-    public $isCityDistrict;
+    public $isCityDistrict = false;
     /**
-     * @var bool $isregion
+     * @var bool $addressBlockId
      */
-    public $addressBlockId;
+    public $addressBlockId = 0;
     /**
      * @var int $statusId
      */
-    public $statusId;
+    public $statusId = Status::ACTIVE;
 }

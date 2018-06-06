@@ -40,16 +40,4 @@ class DB
     private function __construct() {
         throw new \Exception('Use static get() method');
     }
-
-    public static function deprecateOldItems($tableName) {
-        $sql = 'UPDATE ' . $tableName . ' SET statusId = 2';
-        $dbh = self::get();
-        $dbh->exec($sql);
-    }
-
-    public static function insertNewItems($tableName, $items, $fields) {
-        $sql = 'INSERT INTO ' . $tableName . '(' . implode(',', $fields) . ') VALUES ';
-        $sql .= '(' . implode(',', array_fill(0, count($fields), '?')) . ')';
-        echo $sql;
-    }
 }

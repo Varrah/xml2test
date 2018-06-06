@@ -8,6 +8,9 @@
 
 namespace Models\XmlEntities;
 
+
+use Models\Status;
+
 /**
  * Class BuildingClass is used for the Class entity in the incoming XML file.
  * Renamed from pure "Class" due to PHP naming restrictions
@@ -17,13 +20,13 @@ class ComplexType extends BaseEntity
     /**
      * @var int $id
      */
-    public $id;
+    public $id = 0;
     /**
      * @var string $name
      */
-    public $name;
+    public $name = '';
     /**
      * @var int $statusId
      */
-    public $statusId;
+    public $statusId = Status::ACTIVE;
 }

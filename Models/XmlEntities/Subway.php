@@ -9,26 +9,28 @@
 namespace Models\XmlEntities;
 
 
+use Models\Status;
+
 class Subway extends BaseEntity
 {
     /**
      * @var int $id
      */
-    public $id;
+    public $id = 0;
     /**
      * @var string $name
      */
-    public $name;
+    public $name = '';
     /**
      * @var int $line
      */
-    public $line;
+    public $line = 0;
     /**
      * @var int $addressBlockId
      */
-    public $addressBlockId;
+    public $addressBlockId = 0;
     /**
      * @var int $statusId
      */
-    public $statusId;
+    public $statusId = Status::ACTIVE;
 }

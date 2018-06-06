@@ -9,22 +9,24 @@
 namespace Models\XmlEntities;
 
 
+use Models\Status;
+
 class ComplexSubway extends BaseEntity
 {
     /**
      * @var int $complexId
      */
-    public $complexId;
+    public $complexId = 0;
     /**
      * @var int $subwayId
      */
-    public $subwayId;
+    public $subwayId = 0;
     /**
      * @var string $distance
      */
-    public $distance;
+    public $distance = '';
     /**
      * @var int $statusId
      */
-    public $statusId;
+    public $statusId = Status::ACTIVE;
 }

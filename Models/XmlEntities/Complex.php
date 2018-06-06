@@ -8,6 +8,9 @@
 
 namespace Models\XmlEntities;
 
+
+use Models\Status;
+
 /**
  * Class BuildingClass is used for the Class entity in the incoming XML file.
  * Renamed from pure "Class" due to PHP naming restrictions
@@ -17,47 +20,47 @@ class Complex extends BaseEntity
     /**
      * @var int $id
      */
-    public $id;
+    public $id = 0;
     /**
      * @var string $title
      */
-    public $title;
+    public $title = '';
     /**
      * @var string $address
      */
-    public $address;
+    public $address = '';
     /**
      * @var int $regionId
      */
-    public $regionId;
+    public $regionId = 0;
     /**
-     * @var int $latitude stored as int to avoid float value storage issues
+     * @var string $latitude
      */
-    public $latitude;
+    public $latitude = '';
     /**
-     * @var int $longitude stored as int to avoid float value storage issues
+     * @var string $longitude
      */
-    public $longitude;
+    public $longitude = '';
     /**
      * @var int $builderId
      */
-    public $builderId;
+    public $builderId = 0;
     /**
      * @var int $buildingClassId is classid in the XML renamed after the appropriate class
      */
-    public $buildingClassId;
+    public $buildingClassId = 0;
     /**
      * @var int $complexTypeId
      */
-    public $complexTypeId;
+    public $complexTypeId = 0;
     /**
      * @var string $note
      */
-    public $note;
+    public $note = '';
     /**
      * @var int $statusId
      */
-    public $statusId;
+    public $statusId = Status::ACTIVE;
 
     public static function getTableName() {
         return 'Complexes';

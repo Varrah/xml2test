@@ -9,18 +9,20 @@
 namespace Models\XmlEntities;
 
 
+use Models\Status;
+
 class Mortgage extends BaseEntity
 {
     /**
      * @var int $buildingId
      */
-    public $buildingId;
+    public $buildingId = 0;
     /**
      * @var int $bankId
      */
-    public $bankId;
+    public $bankId = 0;
     /**
      * @var int $statusId
      */
-    public $statusId;
+    public $statusId = Status::ACTIVE;
 }

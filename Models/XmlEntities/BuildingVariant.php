@@ -9,18 +9,20 @@
 namespace Models\XmlEntities;
 
 
+use Models\Status;
+
 class BuildingVariant extends BaseEntity
 {
     /**
      * @var int $id
      */
-    public $id;
+    public $id = 0;
     /**
      * @var string $name
      */
-    public $name;
+    public $name = '';
     /**
      * @var int $statusId
      */
-    public $statusId;
+    public $statusId = Status::ACTIVE;
 }
