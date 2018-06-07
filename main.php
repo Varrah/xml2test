@@ -9,7 +9,8 @@
 
 use Models\XmlEntities\BaseEntity;
 
-ob_start();
+header('Content-Type: text/event-stream');
+header('Cache-Control: no-cache');
 ini_set('display_errors', true);
 ini_set('error_reporting', E_ALL);
 require_once('config.php');
@@ -21,7 +22,8 @@ if (!empty(Models\DB::get())) {
 }
 
 echo 'Opening XML...<br>' . PHP_EOL;
-ob_flush();
+flush();
+
 $data = simplexml_load_file(XML_PATH);
 
 echo 'Found sections:<br>' . PHP_EOL;
@@ -29,7 +31,8 @@ $dbh = \Models\DB::get();
 $dbh->beginTransaction();
 foreach ($data as $key => $val) {
     echo $key;
-    ob_flush();
+    flush();
+
     $classPath = \Models\XmlEntities\BaseEntity::getClassPath($key);
     if ($classPath) {
         /**
@@ -37,12 +40,13 @@ foreach ($data as $key => $val) {
          */
         $entity = new $classPath();
         echo '->Deprecating old items...';
-        ob_flush();
+        flush();
         $entity->deprecateOldItems($dbh);
         echo '->Adding new items...';
-        ob_flush();
+        flush();
         $entity->insertNewItems($val, $entity->getFields(), $dbh);
     }
     echo '<br>' . PHP_EOL;
 }
+echo 'Importing data complete, commiting transaction<br>' . PHP_EOL;
 $dbh->commit();
