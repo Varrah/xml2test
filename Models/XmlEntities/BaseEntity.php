@@ -11,6 +11,7 @@ namespace Models\XmlEntities;
 
 use Models\DB;
 use Models\Status;
+use SimpleXMLElement;
 
 class BaseEntity
 {
@@ -36,7 +37,7 @@ class BaseEntity
     }
 
     /**
-     * @param mixed[] $items
+     * @param SimpleXMLElement[] $items
      * @param string[] $fields
      * @param \PDO $dbh
      */
@@ -52,11 +53,17 @@ class BaseEntity
         $emptyEntity = new static();
         foreach ($items as $item) {
             foreach ($fields as $field) {
-                $value = empty($item[$field]) ?: $emptyEntity->$field;
+                $xmlFieldName = static::getXmlFieldName($field);
+                $value = empty($item->$xmlFieldName) ?: $emptyEntity->$field;
                 $statement->bindParam(':' . $field,$value);
             }
             $statement->execute();
         }
+    }
+
+    public static function getXmlFieldName($classFiledName)
+    {
+        return strtolower($classFiledName);
     }
 
     public static function createMySQLSchema() {
