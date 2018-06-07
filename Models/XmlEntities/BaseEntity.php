@@ -50,19 +50,31 @@ class BaseEntity
 
         $statement = $dbh->prepare($sql);
 
-        $emptyEntity = new static();
+        $defaultEntity = new static();
         foreach ($items as $item) {
+            $params = [];
             foreach ($fields as $field) {
                 $xmlFieldName = static::getXmlFieldName($field);
-                $value = empty($item->$xmlFieldName) ?: $emptyEntity->$field;
-                $statement->bindParam(':' . $field,$value);
+                if (isset($item[$xmlFieldName])) {
+                    //XML has this field set
+                    $value = (string)$item[$xmlFieldName];
+                    settype($value, gettype($defaultEntity->$field));
+                } else {
+                    //use default value
+                    $value = $defaultEntity->$field;
+                }
+                $params[':' . $field] = $value;
             }
-            $statement->execute();
+            $result = $statement->execute($params);
+            if (!$result) {
+                echo 'DB Error: ' . var_export($statement->errorInfo(), true);
+            }
         }
     }
 
     public static function getXmlFieldName($classFiledName)
     {
+        //If DB field name is more complex - ovveride this method in the proper XMLEntity class
         return strtolower($classFiledName);
     }
 

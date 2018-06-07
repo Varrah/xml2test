@@ -83,6 +83,14 @@ CREATE TABLE BuildingTypes (
     Engine = InnoDB
     DEFAULT CHARSET = utf8;
 
+CREATE TABLE BuildingSecondTypes (
+    id       INT NOT NULL DEFAULT 0 PRIMARY KEY,
+    name     VARCHAR(255),
+    statusId INT NOT NULL DEFAULT 0
+)
+    Engine = InnoDB
+    DEFAULT CHARSET = utf8;
+
 CREATE TABLE Banks (
     id       INT NOT NULL DEFAULT 0 PRIMARY KEY,
     name     VARCHAR(255),
