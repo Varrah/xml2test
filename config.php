@@ -7,11 +7,11 @@
  */
 
 define('DB_HOST', '127.0.0.1');
-define('DB_USER', 'arrdev1');
-define('DB_PASSWORD', 'arrdev1_twinkletoes');
-define('DB_NAME', 'xmltmp');
+define('DB_USER', 'myuser');
+define('DB_PASSWORD', 'mypassword');
+define('DB_NAME', 'mydb');
 
-define('XML_PATH', 'xml/SiteDataExample.xml');
+define('XML_PATH', 'xml/input.xml');
 
 spl_autoload_register(function ($class) {
     if (substr($class, 0, strlen(__NAMESPACE__)) != __NAMESPACE__) {
@@ -22,5 +22,5 @@ spl_autoload_register(function ($class) {
     $path = __DIR__ . '/' . $path . '.php';
     if (file_exists($path)) {
         require $path;
-    } else { echo $path; }
+    } else { echo 'Class not defined!' . $path; }
 });
